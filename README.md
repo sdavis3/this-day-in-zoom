@@ -37,7 +37,7 @@ pip install this-day-in-zoom
 Or install from source:
 
 ```bash
-git clone https://github.com/your-username/this-day-in-zoom.git
+git clone https://github.com/sdavis3/this-day-in-zoom.git
 cd this-day-in-zoom
 python3 -m venv .venv
 source .venv/bin/activate
@@ -64,19 +64,19 @@ cp .env.example .env
 
 Required variables:
 
-| Variable | Description |
-|---|---|
-| `ZOOM_ACCOUNT_ID` | From your Zoom Server-to-Server OAuth app |
-| `ZOOM_CLIENT_ID` | From your Zoom Server-to-Server OAuth app |
+| Variable             | Description                               |
+| -------------------- | ----------------------------------------- |
+| `ZOOM_ACCOUNT_ID`    | From your Zoom Server-to-Server OAuth app |
+| `ZOOM_CLIENT_ID`     | From your Zoom Server-to-Server OAuth app |
 | `ZOOM_CLIENT_SECRET` | From your Zoom Server-to-Server OAuth app |
-| `OPENAI_API_KEY` | Your OpenAI API key |
+| `OPENAI_API_KEY`     | Your OpenAI API key                       |
 
 Optional:
 
-| Variable | Description |
-|---|---|
+| Variable            | Description                                              |
+| ------------------- | -------------------------------------------------------- |
 | `ANTHROPIC_API_KEY` | For Claude-based event selection (alternative to OpenAI) |
-| `BFL_API_KEY` | For FLUX image generation (future release) |
+| `BFL_API_KEY`       | For FLUX image generation (future release)               |
 
 Then run the interactive config wizard:
 
@@ -107,27 +107,27 @@ tdiz generate -v
 
 ## Commands
 
-| Command | Description |
-|---|---|
-| `tdiz generate` | Generate and upload a background for today (or `--date MM-DD`) |
-| `tdiz list` | List all virtual backgrounds on your Zoom account |
-| `tdiz delete <id>` | Delete a specific background by Zoom file ID |
-| `tdiz cleanup` | Delete all tool-managed backgrounds (preserves your own) |
-| `tdiz schedule` | Generate a macOS launchd plist for daily automation |
-| `tdiz config` | Interactive setup wizard |
+| Command            | Description                                                    |
+| ------------------ | -------------------------------------------------------------- |
+| `tdiz generate`    | Generate and upload a background for today (or `--date MM-DD`) |
+| `tdiz list`        | List all virtual backgrounds on your Zoom account              |
+| `tdiz delete <id>` | Delete a specific background by Zoom file ID                   |
+| `tdiz cleanup`     | Delete all tool-managed backgrounds (preserves your own)       |
+| `tdiz schedule`    | Generate a macOS launchd plist for daily automation            |
+| `tdiz config`      | Interactive setup wizard                                       |
 
 ### Key Flags
 
-| Flag | Default | Description |
-|---|---|---|
-| `--date` / `-d` | Today | Target date in MM-DD format |
-| `--dry-run` | false | Show event/prompt without generating or uploading |
-| `--generate-only` | false | Generate image locally but skip Zoom upload |
-| `--provider` / `-p` | openai | Image generation provider |
-| `--llm-provider` | openai | LLM for event selection (openai or anthropic) |
-| `--max-managed` | 5 | Max tool-managed images to keep on Zoom |
-| `--save-local` / `--no-save-local` | true | Save images to `~/.tdiz/images/` |
-| `--verbose` / `-v` | false | Detailed logging |
+| Flag                               | Default | Description                                       |
+| ---------------------------------- | ------- | ------------------------------------------------- |
+| `--date` / `-d`                    | Today   | Target date in MM-DD format                       |
+| `--dry-run`                        | false   | Show event/prompt without generating or uploading |
+| `--generate-only`                  | false   | Generate image locally but skip Zoom upload       |
+| `--provider` / `-p`                | openai  | Image generation provider                         |
+| `--llm-provider`                   | openai  | LLM for event selection (openai or anthropic)     |
+| `--max-managed`                    | 5       | Max tool-managed images to keep on Zoom           |
+| `--save-local` / `--no-save-local` | true    | Save images to `~/.tdiz/images/`                  |
+| `--verbose` / `-v`                 | false   | Detailed logging                                  |
 
 ---
 
@@ -184,9 +184,9 @@ Zoom enforces a **10 virtual background file limit** per user. This tool manages
 
 Daily image generation uses paid APIs. Expected costs with default settings:
 
-| Provider | Cost per image | Monthly (daily use) |
-|---|---|---|
-| OpenAI GPT Image 1 | ~$0.04–$0.08 | ~$1.20–$2.40 |
+| Provider           | Cost per image | Monthly (daily use) |
+| ------------------ | -------------- | ------------------- |
+| OpenAI GPT Image 1 | ~$0.04–$0.08   | ~$1.20–$2.40        |
 
 LLM event selection adds a negligible cost (a few cents per month).
 
@@ -194,11 +194,11 @@ LLM event selection adds a negligible cost (a few cents per month).
 
 ## Configuration Files
 
-| Path | Purpose |
-|---|---|
+| Path                  | Purpose                                   |
+| --------------------- | ----------------------------------------- |
 | `~/.tdiz/config.toml` | User preferences (never contains secrets) |
-| `~/.tdiz/images/` | Locally saved generated images |
-| `.env` | API keys and credentials (git-ignored) |
+| `~/.tdiz/images/`     | Locally saved generated images            |
+| `.env`                | API keys and credentials (git-ignored)    |
 
 ---
 
