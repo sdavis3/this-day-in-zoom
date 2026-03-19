@@ -8,7 +8,8 @@
       "Bash(python3 -m venv .venv)",
       "Bash(.venv/bin/pip install:*)",
       "Bash(.venv/bin/tdiz --help)",
-      "Bash(.venv/bin/tdiz generate:*)"
+      "Bash(.venv/bin/tdiz generate:*)",
+      "Bash(wc -l /Users/sbdavis/repos/this-day-in-zoom/tests/*.py)"
     ]
   }
 }
