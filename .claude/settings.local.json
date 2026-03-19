@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(python3 -m pip install -e \".[dev]\")",
+      "Bash(uv --version)",
+      "Bash(pipx --version)",
+      "Bash(python3 -m venv .venv)",
+      "Bash(.venv/bin/pip install:*)",
+      "Bash(.venv/bin/tdiz --help)",
+      "Bash(.venv/bin/tdiz generate:*)"
+    ]
+  }
+}
